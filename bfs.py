@@ -35,19 +35,24 @@ class Graph():
                     visited.add(w)
                     queue.append(w)
 
-    def dfs(G, start):
-        stack = []
-        visited = set()
-        stack.append(start)
-        visited.add(start)
-        while stack:
-            v = stack.pop()
-            print(v, end=" ")
-            for w in G.adj(v):
-                if w not in visited:
-                    visited.add(w)
-                    stack.append(w)
-    
+    def path_to(self, v, w):
+        queue = [[v]]
+        visited = set([w])
+
+        while queue:
+            path = queue.pop(0)
+            node = path[-1]
+
+            if node == w:
+                return path
+
+            for neighbor in self.adj(node):
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    new_path = path + [neighbor]
+                    queue.append(new_path)
+
+        return None  # No path found
 
 G = Graph(["A", "B","C", "D","E", "F"], [("A", "B"),("A", "C"),("C", "D")])
 print(G.max_degree())
