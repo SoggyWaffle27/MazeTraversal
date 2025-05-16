@@ -85,3 +85,4 @@ def display_maze(maze):
 # Example usage
 maze = generate_maze(WIDTH, HEIGHT)
 display_maze(maze)
+print(maze)

@@ -1,10 +1,12 @@
+from mazetest.py import generate_maze
+
 class Graph():
     def __init__(self, verts, edges):
         self.edges = edges
         self.verts = verts
 
     def add_vert(self, v):
-        self.verts.append(w)
+        self.verts.append(v)
 
     def add_edge(self, v, w):
         self.verts.append((v, w))
@@ -51,3 +53,6 @@ class Graph():
 
 G = Graph(["A", "B","C", "D","E", "F"], [("A", "B"),("A", "C"),("C", "D")])
 print(G.max_degree())
+
+maze = generate_maze(WIDTH, HEIGHT)
+display_maze(maze)
