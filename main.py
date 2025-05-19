@@ -13,4 +13,4 @@ BLUE = (126, 209, 246)
 
 maze = generate_maze(WIDTH, HEIGHT)
 display_maze(maze)
-print(maze)
+

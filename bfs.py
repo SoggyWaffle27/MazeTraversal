@@ -59,5 +59,3 @@ class Graph():
 G = Graph(["A", "B","C", "D","E", "F"], [("A", "B"),("A", "C"),("C", "D")])
 print(G.max_degree())
 
-maze = generate_maze(WIDTH, HEIGHT)
-display_maze(maze)

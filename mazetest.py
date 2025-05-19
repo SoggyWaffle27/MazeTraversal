@@ -3,7 +3,7 @@ import pygame
 import sys
 
 # Set up the dimensions of the window and colors
-WIDTH = 10#int(input("Dimensions: "))
+WIDTH = int(input("Dimensions: "))
 HEIGHT = WIDTH  # Height of the maze (in cells)
 CELL_SIZE = (600 / WIDTH) + 0  # Size of each cell (pixels)
 WHITE = (255, 255, 255)  # Color for open spaces
