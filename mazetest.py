@@ -3,13 +3,14 @@ import pygame
 import sys
 
 # Set up the dimensions of the window and colors
-WIDTH = int(input("Dimensions: "))  # Width of the maze (in cells)
+WIDTH = 10#int(input("Dimensions: "))
 HEIGHT = WIDTH  # Height of the maze (in cells)
 CELL_SIZE = (600 / WIDTH) + 0  # Size of each cell (pixels)
 WHITE = (255, 255, 255)  # Color for open spaces
 BLACK = (0, 0, 0)  # Color for walls
 RED = (255, 0, 0)  # Color for the start point
 BLUE = (126, 209, 246)
+GREEN = (0, 128, 0)
 
 def generate_maze(width, height):
     # Create grid initialized with walls
@@ -41,10 +42,11 @@ def generate_maze(width, height):
             stack.append((nx, ny))
         else:
             stack.pop()
-    
+        
     return maze
 
 def display_maze(maze):
+    maze[WIDTH - 1][HEIGHT - 1] = 'E'
     pygame.init()
     
     # Create the Pygame window
@@ -70,6 +72,8 @@ def display_maze(maze):
                     color = WHITE
                 elif maze[y][x] == '-':  # Empty space
                     color = BLUE
+                elif maze[y][x] == 'E':  # Empty space
+                    color = GREEN
                 if (x, y) == (1, 1):  # Start point (for visualization)
                     color = RED
                 
@@ -82,7 +86,8 @@ def display_maze(maze):
     pygame.quit()
     sys.exit()
 
+
+
 # Example usage
 maze = generate_maze(WIDTH, HEIGHT)
 display_maze(maze)
-print(maze)
