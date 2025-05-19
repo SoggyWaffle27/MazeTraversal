@@ -42,7 +42,8 @@ def generate_maze(width, height):
             stack.append((nx, ny))
         else:
             stack.pop()
-        
+    
+    print(maze)
     return maze
 
 def display_maze(maze):
