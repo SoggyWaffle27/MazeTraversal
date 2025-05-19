@@ -12,5 +12,5 @@ RED = (255, 0, 0)  # Color for the start point
 BLUE = (126, 209, 246)
 
 maze = generate_maze(WIDTH, HEIGHT)
-display_maze(maze)
+
 
